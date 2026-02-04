@@ -19,7 +19,6 @@ public class Duckie : MonoBehaviour
             //Y: set position to the mouse position
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             transform.position = mousePos;
-
         }
     }
 }
