@@ -16,8 +16,6 @@ public class Duckie : MonoBehaviour
         //was the button pressed this frame? && not pointing at the UI
         if (Mouse.current.leftButton.wasPressedThisFrame == true && EventSystem.current.IsPointerOverGameObject() == false)
         {
-
-
             //Y: set position to the mouse position
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             transform.position = mousePos;
