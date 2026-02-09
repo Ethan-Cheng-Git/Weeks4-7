@@ -17,11 +17,13 @@ public class UIDemo : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         score.text = howManyClicks.ToString();
         slider.wholeNumbers = true;
+        slider.value = 2;
     }
 
     // Update is called once per frame
     void Update()
     {
+        slider.value = 2;
         sliderDisplay.text = slider.value.ToString();
         if (Keyboard.current.anyKey.wasPressedThisFrame == true)
         {
