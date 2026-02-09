@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -7,15 +8,21 @@ public class UIDemo : MonoBehaviour
     SpriteRenderer sr;
     public Image duckieImage; //the duckie image on the UI Canvas
     public int howManyClicks = 0;
+    public TextMeshProUGUI score;
+    public Slider slider;
+    public TextMeshProUGUI sliderDisplay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        score.text = howManyClicks.ToString();
+        slider.wholeNumbers = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        sliderDisplay.text = slider.value.ToString();
         if (Keyboard.current.anyKey.wasPressedThisFrame == true)
         {
             changeColour();
@@ -36,5 +43,10 @@ public class UIDemo : MonoBehaviour
     public void AddToTheNumber()
     {
         howManyClicks++;
+        score.text = howManyClicks.ToString();
+    }
+    public void SetScaleBig(float scale)
+    {
+        transform.localScale = Vector3.one * scale;
     }
 }
