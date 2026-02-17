@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
-public class Crosshair : MonoBehaviour
+public class PointingGun : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,8 +13,9 @@ public class Crosshair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //The crosshair moves along with the mouse 
+    // have the gun image point at the mouse
        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-       transform.position = mousePos;
+       Vector2 direction = (Vector2)transform.position - mousePos;
+       transform.right = direction;
     }
 }
